@@ -1,6 +1,4 @@
-<Aqui está a estrutura atualizada. Criei uma seção especial de **Categorias em Círculo** (com ícones/imagens redondas) e organizei os produtos destacando o conceito de **Refil** (masculino e feminino), **Body Splash**, **Cuidados Corporais**, além do bloco de **Entregas** e **Promoções**.
-
-```html
+<
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -49,7 +47,7 @@
             text-transform: uppercase;
         }
 
-        /* CAPA / HERO */
+        /* HERO / CAPA */
         .hero {
             padding: 60px 20px;
             text-align: center;
@@ -102,28 +100,30 @@
             width: 110px;
         }
 
-        .circulo {
+        .circulo-img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            background-color: #1a1a1a;
+            object-fit: cover;
             border: 2px solid #d4af37;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .promo-circulo {
+            background-color: #1a1a1a;
+            color: #ff4d4d;
+            border-color: #ff4d4d;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 11px;
-            text-align: center;
-            padding: 10px;
-            color: #ccc;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            font-weight: bold;
+            font-size: 16px;
         }
 
-        .item-circulo:hover .circulo {
+        .item-circulo:hover .circulo-img {
             transform: scale(1.08);
-            background-color: #d4af37;
-            color: #000;
-            font-weight: bold;
+            border-color: #ffffff;
         }
 
         .rotulo-circulo {
@@ -149,19 +149,32 @@
             border-radius: 8px;
             padding: 20px;
             text-align: center;
+            transition: transform 0.3s ease;
         }
 
-        .foto-placeholder {
+        .card-produto:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+
+        .container-foto {
             width: 100%;
-            height: 160px;
-            background-color: #252525;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 6px;
             margin-bottom: 15px;
-            font-size: 12px;
-            border-radius: 4px;
+            background-color: #252525;
+        }
+
+        .foto-perfume {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .card-produto:hover .foto-perfume {
+            transform: scale(1.05);
         }
 
         .categoria-tag {
@@ -191,6 +204,11 @@
             text-transform: uppercase;
             cursor: pointer;
             border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .btn-gold:hover {
+            background-color: #ffffff;
         }
 
         /* INFORMAÇÕES DE ENTREGA */
@@ -250,37 +268,37 @@
         <div class="grid-circulos">
             
             <a href="#masculino" class="item-circulo">
-                <div class="circulo">[Foto Perfume]</div>
+                <img src="image.png" alt="Perfume Masculino" class="circulo-img">
                 <span class="rotulo-circulo">Masculino</span>
             </a>
 
             <a href="#feminino" class="item-circulo">
-                <div class="circulo">[Foto Perfume]</div>
+                <img src="image.png" alt="Perfume Feminino" class="circulo-img">
                 <span class="rotulo-circulo">Feminino</span>
             </a>
 
             <a href="#splash" class="item-circulo">
-                <div class="circulo">[Foto Splash]</div>
+                <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=200&q=80" alt="Body Splash" class="circulo-img">
                 <span class="rotulo-circulo">Body Splash</span>
             </a>
 
             <a href="#corpo" class="item-circulo">
-                <div class="circulo">[Foto Creme]</div>
+                <img src="https://images.unsplash.com/photo-1608248597266-c89176f0d7e6?auto=format&fit=crop&w=200&q=80" alt="Para o Corpo" class="circulo-img">
                 <span class="rotulo-circulo">Para o Corpo</span>
             </a>
 
             <a href="#refil-masc" class="item-circulo">
-                <div class="circulo">[Foto Refil]</div>
+                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=200&q=80" alt="Refil Masculino" class="circulo-img">
                 <span class="rotulo-circulo">Refil Masculino</span>
             </a>
 
             <a href="#refil-fem" class="item-circulo">
-                <div class="circulo">[Foto Refil]</div>
+                <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=200&q=80" alt="Refil Feminino" class="circulo-img">
                 <span class="rotulo-circulo">Refil Feminino</span>
             </a>
 
             <a href="#promocoes" class="item-circulo">
-                <div class="circulo" style="border-color: #ff4d4d; color: #ff4d4d;">% OFF</div>
+                <div class="circulo-img promo-circulo">% OFF</div>
                 <span class="rotulo-circulo">Promoções</span>
             </a>
 
@@ -293,7 +311,9 @@
         <div class="grid-produtos">
             
             <div class="card-produto" id="masculino">
-                <div class="foto-placeholder">[ Frasco Masculino ]</div>
+                <div class="container-foto">
+                    <img src="image.png" alt="Vell'Aura Homme" class="foto-perfume">
+                </div>
                 <span class="categoria-tag">Perfume Masculino</span>
                 <h3>Vell'Aura Homme 100ml</h3>
                 <p class="preco">R$ 289,00</p>
@@ -301,7 +321,9 @@
             </div>
 
             <div class="card-produto" id="feminino">
-                <div class="foto-placeholder">[ Frasco Feminino ]</div>
+                <div class="container-foto">
+                    <img src="image.png" alt="Vell'Aura Femme" class="foto-perfume">
+                </div>
                 <span class="categoria-tag">Perfume Feminino</span>
                 <h3>Vell'Aura Femme 100ml</h3>
                 <p class="preco">R$ 289,00</p>
@@ -309,7 +331,9 @@
             </div>
 
             <div class="card-produto" id="splash">
-                <div class="foto-placeholder">[ Body Splash ]</div>
+                <div class="container-foto">
+                    <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=400&q=80" alt="Body Splash" class="foto-perfume">
+                </div>
                 <span class="categoria-tag">Body Splash</span>
                 <h3>Aura Leve 200ml</h3>
                 <p class="preco">R$ 89,90</p>
@@ -317,7 +341,9 @@
             </div>
 
             <div class="card-produto" id="corpo">
-                <div class="foto-placeholder">[ Creme Corporal ]</div>
+                <div class="container-foto">
+                    <img src="https://images.unsplash.com/photo-1608248597266-c89176f0d7e6?auto=format&fit=crop&w=400&q=80" alt="Creme Corporal" class="foto-perfume">
+                </div>
                 <span class="categoria-tag">Para o Corpo</span>
                 <h3>Satin Body Lotion 200g</h3>
                 <p class="preco">R$ 79,00</p>
@@ -325,7 +351,9 @@
             </div>
 
             <div class="card-produto" id="refil-masc">
-                <div class="foto-placeholder">[ Refil Masculino ]</div>
+                <div class="container-foto">
+                    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=400&q=80" alt="Refil Masculino" class="foto-perfume">
+                </div>
                 <span class="categoria-tag">Refil Masculino</span>
                 <h3>Refil Homme 100ml</h3>
                 <p class="preco">R$ 189,00</p>
@@ -333,7 +361,9 @@
             </div>
 
             <div class="card-produto" id="refil-fem">
-                <div class="foto-placeholder">[ Refil Feminino ]</div>
+                <div class="container-foto">
+                    <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=400&q=80" alt="Refil Feminino" class="foto-perfume">
+                </div>
                 <span class="categoria-tag">Refil Feminino</span>
                 <h3>Refil Femme 100ml</h3>
                 <p class="preco">R$ 189,00</p>
@@ -365,7 +395,4 @@
 
 </body>
 </html>
-
-```
-
-Gostaria de adicionar imagens reais nos círculos ou deseja incluir um calculador de frete por CEP no rodapé?
+       
