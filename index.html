@@ -1,9 +1,12 @@
+<Aqui está a estrutura atualizada. Criei uma seção especial de **Categorias em Círculo** (com ícones/imagens redondas) e organizei os produtos destacando o conceito de **Refil** (masculino e feminino), **Body Splash**, **Cuidados Corporais**, além do bloco de **Entregas** e **Promoções**.
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vell'Aura | Alta Perfumaria & Cuidados</title>
+    <title>Vell'Aura | Perfumaria & Refis</title>
     <style>
         * {
             margin: 0;
@@ -17,7 +20,7 @@
             color: #ffffff;
         }
 
-        /* --- BARRA DE PROMOÇÕES --- */
+        /* BARRA DE PROMOÇÃO */
         .bar-promo {
             background-color: #d4af37;
             color: #000;
@@ -29,7 +32,7 @@
             text-transform: uppercase;
         }
 
-        /* --- NAVEGAÇÃO --- */
+        /* MENU */
         nav {
             display: flex;
             justify-content: space-between;
@@ -46,36 +49,16 @@
             text-transform: uppercase;
         }
 
-        .menu-links a {
-            color: #ccc;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 13px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-
-        .menu-links a:hover {
-            color: #d4af37;
-        }
-
-        /* --- CAPA / HERO --- */
+        /* CAPA / HERO */
         .hero {
-            height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 60px 20px;
             text-align: center;
-            background: linear-gradient(180deg, rgba(15,15,15,0.2) 0%, #0f0f0f 100%),
-                        radial-gradient(circle, #2c1f18 0%, #0f0f0f 100%);
-            padding: 0 20px;
+            background: radial-gradient(circle, #2c1f18 0%, #0f0f0f 100%);
         }
 
         .hero h1 {
             font-family: 'Times New Roman', serif;
-            font-size: 52px;
+            font-size: 48px;
             letter-spacing: 4px;
             color: #d4af37;
             margin-bottom: 10px;
@@ -83,68 +66,94 @@
 
         .hero p {
             color: #aaa;
-            max-width: 500px;
-            margin-bottom: 25px;
-            font-size: 15px;
+            font-size: 14px;
+            letter-spacing: 1px;
         }
 
-        .btn-gold {
-            background-color: #d4af37;
-            color: #0f0f0f;
-            padding: 12px 30px;
-            border: none;
-            text-decoration: none;
-            font-size: 12px;
-            letter-spacing: 2px;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn-gold:hover {
-            background-color: #fff;
-        }
-
-        /* --- VITRINE DE CATEGORIAS --- */
-        .secao {
-            padding: 60px 50px;
-            max-width: 1200px;
+        /* --- CATEGORIAS EM CÍRCULO --- */
+        .secao-circulos {
+            padding: 40px 20px;
+            max-width: 1100px;
             margin: 0 auto;
+            text-align: center;
         }
 
         .titulo-secao {
-            text-align: center;
-            font-size: 22px;
+            font-size: 20px;
             letter-spacing: 3px;
             color: #d4af37;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             text-transform: uppercase;
         }
 
+        .grid-circulos {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .item-circulo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            width: 110px;
+        }
+
+        .circulo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #1a1a1a;
+            border: 2px solid #d4af37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            text-align: center;
+            padding: 10px;
+            color: #ccc;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .item-circulo:hover .circulo {
+            transform: scale(1.08);
+            background-color: #d4af37;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .rotulo-circulo {
+            margin-top: 10px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* --- CARDS DE PRODUTO --- */
         .grid-produtos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         .card-produto {
             background: #181818;
             border: 1px solid #282828;
-            border-radius: 6px;
+            border-radius: 8px;
             padding: 20px;
             text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .card-produto:hover {
-            transform: translateY(-5px);
-            border-color: #d4af37;
         }
 
         .foto-placeholder {
             width: 100%;
-            height: 180px;
+            height: 160px;
             background-color: #252525;
             display: flex;
             align-items: center;
@@ -155,45 +164,53 @@
             border-radius: 4px;
         }
 
-        .card-produto h3 {
-            font-size: 16px;
-            margin-bottom: 8px;
-        }
-
-        .card-produto .categoria-tag {
-            font-size: 11px;
+        .categoria-tag {
+            font-size: 10px;
             color: #d4af37;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 10px;
             display: block;
+            margin-bottom: 5px;
         }
 
         .preco {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             margin: 10px 0;
-            color: #fff;
         }
 
-        /* --- SEÇÃO DE ENTREGAS --- */
+        .btn-gold {
+            background-color: #d4af37;
+            color: #0f0f0f;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            font-size: 11px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        /* INFORMAÇÕES DE ENTREGA */
         .secao-entregas {
             background-color: #141414;
             border-top: 1px solid #222;
-            border-bottom: 1px solid #222;
-            padding: 40px 20px;
+            padding: 30px 20px;
             display: flex;
             justify-content: space-around;
             text-align: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
+            margin-top: 40px;
         }
 
         .item-info h4 {
             color: #d4af37;
-            margin-bottom: 5px;
-            font-size: 14px;
+            font-size: 13px;
             letter-spacing: 1px;
+            margin-bottom: 4px;
         }
 
         .item-info p {
@@ -201,114 +218,154 @@
             font-size: 12px;
         }
 
-        /* --- RODAPÉ --- */
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 20px;
             color: #555;
-            font-size: 12px;
-            letter-spacing: 1px;
+            font-size: 11px;
         }
     </style>
 </head>
 <body>
 
-    <!-- BARRA SUPERIOR DE PROMOÇÕES -->
+    <!-- PROMOÇÃO NO TOPO -->
     <div class="bar-promo">
-        Frete Grátis acima de R$ 250 | 10% OFF no Refil usando o cupom REFIL10
+        🔥 PROMOÇÃO DE LANÇAMENTO: LEVE QUALQUER REFIL COM 15% OFF USANDO O CUPOM "ECOVELL"
     </div>
 
-    <!-- MENU DE NAVEGAÇÃO -->
+    <!-- LOGO -->
     <nav>
         <div class="logo">Vell'Aura</div>
-        <div class="menu-links">
-            <a href="#masculino">Masculino</a>
-            <a href="#feminino">Feminino</a>
-            <a href="#splash">Body Splash</a>
-            <a href="#corpo">Corpo</a>
-            <a href="#refis">Refis</a>
-        </div>
     </nav>
 
-    <!-- CAPA DA LOJA -->
+    <!-- HERO / CAPA -->
     <header class="hero">
         <h1>Vell'Aura</h1>
-        <p>Fragrâncias marcantes, hidratantes corporais e refis sustentáveis para acompanhar sua rotina.</p>
-        <a href="#promocoes" class="btn-gold">Ver Promoções</a>
+        <p>Alta Perfumaria, Cuidados Corporais e Refis Sustentáveis</p>
     </header>
 
-    <!-- INFORMAÇÕES DE ENTREGA -->
-    <section class="secao-entregas">
-        <div class="item-info">
-            <h4>ENTREGA EXPRESSA</h4>
-            <p>Enviamos para todo o Brasil com rastreamento.</p>
-        </div>
-        <div class="item-info">
-            <h4>EMBALAGEM ECOLÓGICA</h4>
-            <p>Opções de refil que reduzem o descarte de vidro.</p>
-        </div>
-        <div class="item-info">
-            <h4>PROMOÇÕES ATIVAS</h4>
-            <p>Descontos cumulativos no checkout.</p>
+    <!-- NAVEGAÇÃO EM CÍRCULOS -->
+    <section class="secao-circulos">
+        <h2 class="titulo-secao">Navegue por Categoria</h2>
+        <div class="grid-circulos">
+            
+            <a href="#masculino" class="item-circulo">
+                <div class="circulo">[Foto Perfume]</div>
+                <span class="rotulo-circulo">Masculino</span>
+            </a>
+
+            <a href="#feminino" class="item-circulo">
+                <div class="circulo">[Foto Perfume]</div>
+                <span class="rotulo-circulo">Feminino</span>
+            </a>
+
+            <a href="#splash" class="item-circulo">
+                <div class="circulo">[Foto Splash]</div>
+                <span class="rotulo-circulo">Body Splash</span>
+            </a>
+
+            <a href="#corpo" class="item-circulo">
+                <div class="circulo">[Foto Creme]</div>
+                <span class="rotulo-circulo">Para o Corpo</span>
+            </a>
+
+            <a href="#refil-masc" class="item-circulo">
+                <div class="circulo">[Foto Refil]</div>
+                <span class="rotulo-circulo">Refil Masculino</span>
+            </a>
+
+            <a href="#refil-fem" class="item-circulo">
+                <div class="circulo">[Foto Refil]</div>
+                <span class="rotulo-circulo">Refil Feminino</span>
+            </a>
+
+            <a href="#promocoes" class="item-circulo">
+                <div class="circulo" style="border-color: #ff4d4d; color: #ff4d4d;">% OFF</div>
+                <span class="rotulo-circulo">Promoções</span>
+            </a>
+
         </div>
     </section>
 
     <!-- VITRINE DE PRODUTOS -->
-    <main class="secao" id="promocoes">
-        <h2 class="titulo-secao">Destaques & Linhas</h2>
-        
+    <main>
+        <h2 class="titulo-secao" style="text-align: center;">Catálogo em Destaque</h2>
         <div class="grid-produtos">
-            <!-- Produto Masculino -->
+            
             <div class="card-produto" id="masculino">
                 <div class="foto-placeholder">[ Frasco Masculino ]</div>
                 <span class="categoria-tag">Perfume Masculino</span>
-                <h3>Vell'Aura Noir 100ml</h3>
-                <p class="preco">R$ 299,00</p>
-                <button class="btn-gold" style="width: 100%;">Comprar</button>
+                <h3>Vell'Aura Homme 100ml</h3>
+                <p class="preco">R$ 289,00</p>
+                <button class="btn-gold">Adicionar</button>
             </div>
 
-            <!-- Produto Feminino -->
             <div class="card-produto" id="feminino">
                 <div class="foto-placeholder">[ Frasco Feminino ]</div>
                 <span class="categoria-tag">Perfume Feminino</span>
-                <h3>Vell'Aura Dorée 100ml</h3>
-                <p class="preco">R$ 299,00</p>
-                <button class="btn-gold" style="width: 100%;">Comprar</button>
+                <h3>Vell'Aura Femme 100ml</h3>
+                <p class="preco">R$ 289,00</p>
+                <button class="btn-gold">Adicionar</button>
             </div>
 
-            <!-- Body Splash -->
             <div class="card-produto" id="splash">
                 <div class="foto-placeholder">[ Body Splash ]</div>
                 <span class="categoria-tag">Body Splash</span>
                 <h3>Aura Leve 200ml</h3>
                 <p class="preco">R$ 89,90</p>
-                <button class="btn-gold" style="width: 100%;">Comprar</button>
+                <button class="btn-gold">Adicionar</button>
             </div>
 
-            <!-- Para o Corpo -->
             <div class="card-produto" id="corpo">
-                <div class="foto-placeholder">[ Hidratante ]</div>
+                <div class="foto-placeholder">[ Creme Corporal ]</div>
                 <span class="categoria-tag">Para o Corpo</span>
-                <h3>Loção Hidratante 250g</h3>
-                <p class="preco">R$ 75,00</p>
-                <button class="btn-gold" style="width: 100%;">Comprar</button>
+                <h3>Satin Body Lotion 200g</h3>
+                <p class="preco">R$ 79,00</p>
+                <button class="btn-gold">Adicionar</button>
             </div>
 
-            <!-- Refil -->
-            <div class="card-produto" id="refis">
-                <div class="foto-placeholder">[ Embalagem Refil ]</div>
-                <span class="categoria-tag">Eco Refil</span>
-                <h3>Refil Perfume Noir 100ml</h3>
-                <p class="preco">R$ 199,00</p>
-                <button class="btn-gold" style="width: 100%;">Comprar</button>
+            <div class="card-produto" id="refil-masc">
+                <div class="foto-placeholder">[ Refil Masculino ]</div>
+                <span class="categoria-tag">Refil Masculino</span>
+                <h3>Refil Homme 100ml</h3>
+                <p class="preco">R$ 189,00</p>
+                <button class="btn-gold">Adicionar</button>
             </div>
+
+            <div class="card-produto" id="refil-fem">
+                <div class="foto-placeholder">[ Refil Feminino ]</div>
+                <span class="categoria-tag">Refil Feminino</span>
+                <h3>Refil Femme 100ml</h3>
+                <p class="preco">R$ 189,00</p>
+                <button class="btn-gold">Adicionar</button>
+            </div>
+
         </div>
     </main>
 
-    <!-- RODAPÉ -->
+    <!-- INFORMAÇÕES DE ENTREGA -->
+    <section class="secao-entregas">
+        <div class="item-info">
+            <h4>🚚 ENTREGAS EM TODO O BRASIL</h4>
+            <p>Frete grátis em compras acima de R$ 250,00</p>
+        </div>
+        <div class="item-info">
+            <h4>♻️ REFIS ECOLÓGICOS</h4>
+            <p>Economize até 35% reutilizando o seu frasco original</p>
+        </div>
+        <div class="item-info">
+            <h4>💳 PARCELAMENTO</h4>
+            <p>Em até 6x sem juros no cartão de crédito</p>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2026 Vell'Aura Perfumaria. Todos os direitos reservados.</p>
     </footer>
 
 </body>
 </html>
+
+```
+
+Gostaria de adicionar imagens reais nos círculos ou deseja incluir um calculador de frete por CEP no rodapé?
