@@ -1,0 +1,78 @@
+<!-- NAVEGAÇÃO EM CÍRCULOS COM IMAGENS -->
+<section class="secao-circulos">
+    <h2 class="titulo-secao">Navegue por Categoria</h2>
+    <div class="grid-circulos">
+        
+        <!-- Perfume Masculino -->
+        <a href="#masculino" class="item-circulo">
+            <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=200&q=80" alt="Perfume Masculino" class="circulo-img">
+            <span class="rotulo-circulo">Masculino</span>
+        </a>
+
+        <!-- Perfume Feminino -->
+        <a href="#feminino" class="item-circulo">
+            <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=200&q=80" alt="Perfume Feminino" class="circulo-img">
+            <span class="rotulo-circulo">Feminino</span>
+        </a>
+
+        <!-- Body Splash -->
+        <a href="#splash" class="item-circulo">
+            <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=200&q=80" alt="Body Splash" class="circulo-img">
+            <span class="rotulo-circulo">Body Splash</span>
+        </a>
+
+        <!-- Para o Corpo -->
+        <a href="#corpo" class="item-circulo">
+            <img src="https://images.unsplash.com/photo-1608248597266-c89176f0d7e6?auto=format&fit=crop&w=200&q=80" alt="Para o Corpo" class="circulo-img">
+            <span class="rotulo-circulo">Para o Corpo</span>
+        </a>
+
+        <!-- Refil Masculino -->
+        <a href="#refil-masc" class="item-circulo">
+            <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=200&q=80" alt="Refil Masculino" class="circulo-img">
+            <span class="rotulo-circulo">Refil Masculino</span>
+        </a>
+
+        <!-- Refil Feminino -->
+        <a href="#refil-fem" class="item-circulo">
+            <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=200&q=80" alt="Refil Feminino" class="circulo-img">
+            <span class="rotulo-circulo">Refil Feminino</span>
+        </a>
+
+        <!-- Promoções -->
+        <a href="#promocoes" class="item-circulo">
+            <div class="circulo-img promo-circulo">% OFF</div>
+            <span class="rotulo-circulo">Promoções</span>
+        </a>
+
+    </div>
+</section>
+
+<!-- CSS PARA DEIXAR AS IMAGENS REDONDAS -->
+<style>
+    .circulo-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #d4af37;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .promo-circulo {
+        background-color: #1a1a1a;
+        color: #ff4d4d;
+        border-color: #ff4d4d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .item-circulo:hover .circulo-img {
+        transform: scale(1.08);
+        border-color: #ffffff;
+    }
+</style>
