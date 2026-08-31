@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vell'Aura | Alta Perfumaria & Cuidados</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #0f0f0f;
+            color: #ffffff;
+        }
+
+        /* --- BARRA DE PROMOÇÕES --- */
+        .bar-promo {
+            background-color: #d4af37;
+            color: #000;
+            text-align: center;
+            padding: 8px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* --- NAVEGAÇÃO --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-family: 'Times New Roman', serif;
+            font-size: 28px;
+            letter-spacing: 4px;
+            color: #d4af37;
+            text-transform: uppercase;
+        }
+
+        .menu-links a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .menu-links a:hover {
+            color: #d4af37;
+        }
+
+        /* --- CAPA / HERO --- */
+        .hero {
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(15,15,15,0.2) 0%, #0f0f0f 100%),
+                        radial-gradient(circle, #2c1f18 0%, #0f0f0f 100%);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Times New Roman', serif;
+            font-size: 52px;
+            letter-spacing: 4px;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #aaa;
+            max-width: 500px;
+            margin-bottom: 25px;
+            font-size: 15px;
+        }
+
+        .btn-gold {
+            background-color: #d4af37;
+            color: #0f0f0f;
+            padding: 12px 30px;
+            border: none;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-gold:hover {
+            background-color: #fff;
+        }
+
+        /* --- VITRINE DE CATEGORIAS --- */
+        .secao {
+            padding: 60px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .titulo-secao {
+            text-align: center;
+            font-size: 22px;
+            letter-spacing: 3px;
+            color: #d4af37;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .grid-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card-produto {
+            background: #181818;
+            border: 1px solid #282828;
+            border-radius: 6px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card-produto:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+
+        .foto-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: #252525;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+
+        .card-produto h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .card-produto .categoria-tag {
+            font-size: 11px;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .preco {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #fff;
+        }
+
+        /* --- SEÇÃO DE ENTREGAS --- */
+        .secao-entregas {
+            background-color: #141414;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .item-info h4 {
+            color: #d4af37;
+            margin-bottom: 5px;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .item-info p {
+            color: #888;
+            font-size: 12px;
+        }
+
+        /* --- RODAPÉ --- */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #555;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR DE PROMOÇÕES -->
+    <div class="bar-promo">
+        Frete Grátis acima de R$ 250 | 10% OFF no Refil usando o cupom REFIL10
+    </div>
+
+    <!-- MENU DE NAVEGAÇÃO -->
+    <nav>
+        <div class="logo">Vell'Aura</div>
+        <div class="menu-links">
+            <a href="#masculino">Masculino</a>
+            <a href="#feminino">Feminino</a>
+            <a href="#splash">Body Splash</a>
+            <a href="#corpo">Corpo</a>
+            <a href="#refis">Refis</a>
+        </div>
+    </nav>
+
+    <!-- CAPA DA LOJA -->
+    <header class="hero">
+        <h1>Vell'Aura</h1>
+        <p>Fragrâncias marcantes, hidratantes corporais e refis sustentáveis para acompanhar sua rotina.</p>
+        <a href="#promocoes" class="btn-gold">Ver Promoções</a>
+    </header>
+
+    <!-- INFORMAÇÕES DE ENTREGA -->
+    <section class="secao-entregas">
+        <div class="item-info">
+            <h4>ENTREGA EXPRESSA</h4>
+            <p>Enviamos para todo o Brasil com rastreamento.</p>
+        </div>
+        <div class="item-info">
+            <h4>EMBALAGEM ECOLÓGICA</h4>
+            <p>Opções de refil que reduzem o descarte de vidro.</p>
+        </div>
+        <div class="item-info">
+            <h4>PROMOÇÕES ATIVAS</h4>
+            <p>Descontos cumulativos no checkout.</p>
+        </div>
+    </section>
+
+    <!-- VITRINE DE PRODUTOS -->
+    <main class="secao" id="promocoes">
+        <h2 class="titulo-secao">Destaques & Linhas</h2>
+        
+        <div class="grid-produtos">
+            <!-- Produto Masculino -->
+            <div class="card-produto" id="masculino">
+                <div class="foto-placeholder">[ Frasco Masculino ]</div>
+                <span class="categoria-tag">Perfume Masculino</span>
+                <h3>Vell'Aura Noir 100ml</h3>
+                <p class="preco">R$ 299,00</p>
+                <button class="btn-gold" style="width: 100%;">Comprar</button>
+            </div>
+
+            <!-- Produto Feminino -->
+            <div class="card-produto" id="feminino">
+                <div class="foto-placeholder">[ Frasco Feminino ]</div>
+                <span class="categoria-tag">Perfume Feminino</span>
+                <h3>Vell'Aura Dorée 100ml</h3>
+                <p class="preco">R$ 299,00</p>
+                <button class="btn-gold" style="width: 100%;">Comprar</button>
+            </div>
+
+            <!-- Body Splash -->
+            <div class="card-produto" id="splash">
+                <div class="foto-placeholder">[ Body Splash ]</div>
+                <span class="categoria-tag">Body Splash</span>
+                <h3>Aura Leve 200ml</h3>
+                <p class="preco">R$ 89,90</p>
+                <button class="btn-gold" style="width: 100%;">Comprar</button>
+            </div>
+
+            <!-- Para o Corpo -->
+            <div class="card-produto" id="corpo">
+                <div class="foto-placeholder">[ Hidratante ]</div>
+                <span class="categoria-tag">Para o Corpo</span>
+                <h3>Loção Hidratante 250g</h3>
+                <p class="preco">R$ 75,00</p>
+                <button class="btn-gold" style="width: 100%;">Comprar</button>
+            </div>
+
+            <!-- Refil -->
+            <div class="card-produto" id="refis">
+                <div class="foto-placeholder">[ Embalagem Refil ]</div>
+                <span class="categoria-tag">Eco Refil</span>
+                <h3>Refil Perfume Noir 100ml</h3>
+                <p class="preco">R$ 199,00</p>
+                <button class="btn-gold" style="width: 100%;">Comprar</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; 2026 Vell'Aura Perfumaria. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
